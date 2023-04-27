@@ -1,0 +1,25 @@
+<svg width="76" height="61" viewBox="0 0 76 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="vdxGradientLogoMask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="24" y="0" width="52" height="34">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M24.1641 0.274414C43.9315 0.274414 58.0928 15.7001 59.4433 33.0002L74.7316 10.2921C77.606 6.02267 74.5467 0.274414 69.3996 0.274414H24.1641Z" fill="white"/>
+</mask>
+<g mask="url(#vdxGradientLogoMask0)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M24.1641 0.274414C43.9315 0.274414 58.0928 15.7001 59.4433 33.0002L74.7316 10.2921C77.606 6.02267 74.5467 0.274414 69.3996 0.274414H24.1641Z" fill="url(#vdxGradientLogoFill0)"/>
+</g>
+<mask id="vdxGradientLogoMask1" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="51" height="61">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0.0576172 0.274414L40.767 60.741L44.4071 55.3337C60.2062 31.8666 43.3903 0.274414 15.1008 0.274414H0.0576172Z" fill="white"/>
+</mask>
+<g mask="url(#vdxGradientLogoMask1)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0.0576172 0.274414L40.767 60.741L44.4071 55.3337C60.2062 31.8666 43.3903 0.274414 15.1008 0.274414H0.0576172Z" fill="url(#vdxGradientLogoFill1)"/>
+</g>
+<defs>
+<linearGradient id="vdxGradientLogoFill0" x1="-4.17275" y1="-2.07297" x2="19.294" y2="39.3607" gradientUnits="userSpaceOnUse">
+<stop stop-color="#543FED"/>
+<stop offset="1" stop-color="#462AC8"/>
+</linearGradient>
+<linearGradient id="vdxGradientLogoFill1" x1="0.516242" y1="41.7599" x2="44.2087" y2="60.111" gradientUnits="userSpaceOnUse">
+<stop stop-color="#543FED"/>
+<stop offset="1" stop-color="#462AC8"/>
+</linearGradient>
+</defs>
+</svg>
+
