@@ -3,30 +3,39 @@ import Image from "next/image";
 
 const Edp = () => {
 	return (
-		<div className="bg-white text-black">
-			<div className="">
+		<div className="flex flex-col md:flex-row mx-4 text-black md:mx-24 justify-between">
+			<div className="mt-12">
 				<div className="">
-					<h1 className="">
+					<h1 className="text-xl font-semibold">
 						Web Summit 2023
 					</h1>
 				</div>
-				<div className="">
+				<div className="mt-4">
 					<h3 className="">
 						Nov 13 - 16, 2023
 					</h3>
 				</div>
 				<div className="">
 					<div className="">
-						<div className="">
-							<span className=""></span>
+						<div className="flex items-center mt-4">
+							<Image src='/icons/cards/GradientPin.svg'
+								width={15}
+								height={15}
+								alt={'pin'}
+							/>
 							<span className="ml-2">
 								Altice Arena &amp; Fil | Lisbon, Portugal
 							</span>
 						</div>
-						<div className="">
-							<span className=""></span>
+
+						<div className="flex items-center mt-4">
+							<Image src='/icons/cards/GradientPocketBook.svg'
+								width={15}
+								height={15}
+								alt={'pin'}
+							/>
 							<span className="ml-2">Free</span>
-							<span className="pl-1">
+							<span className="pl-2">
 								{" "}
 								|{" "}
 								<a
@@ -38,8 +47,12 @@ const Edp = () => {
 								</a>{" "}
 							</span>
 						</div>
-						<div className="">
-							<span className=""></span>
+						<div className="flex items-center mt-4">
+							<Image src='/icons/cards/UrlIcon.svg'
+								width={15}
+								height={15}
+								alt={'pin'}
+							/>
 							<a
 								href="https://websummit.com/?utm_source=vendelux.com"
 								target="_blank"
@@ -50,29 +63,31 @@ const Edp = () => {
 							</a>
 						</div>
 					</div>
-					<div className="">
-						<div className="">
-							<div className="">
-								<div className="">
-									<Image src='https://i.vendelux.com/--PpTyxSDdBfCpLW7Qojd5hfijc=/fit-in/412x246/filters:upscale():fill(f0eff9,1)/media/pic_folder/5iw2NPQNZMjKkFYPVhzCHXYChceDryvhGPQpZZwZ5riX_SUG4dPy.png'
-										width={120}
-										height={35}
-										alt='vdx-testing'
-										priority
-									/>
-									<h6 className="">
-										197 prospects attending
-									</h6>
-								</div>
-							</div>
-							<div className="">
-								<div className=""></div>
-							</div>
-						</div>
+				</div>
+				<div className="flex flex-col md:flex-row">
+
+					<div className="flex flex-col flex-1">
+						<div className="mt-4">Web Summit is a technology conference that takes place annually in Lisbon, Portugal. The conference is known for attracting high-profile speakers and attendees from the technology industry, including CEOs of major technology companies, venture capitalists, and other influential figures. Web Summit typically focuses on topics related to the internet, technology, and entrepreneurship. It is considered one of the largest technology conferences in the world.</div>
+						<button className="underline pointer my-4">Show more</button>
+					</div>
+					<div className="flex justify-center items-center">
+						<Image src='https://i.vendelux.com/--PpTyxSDdBfCpLW7Qojd5hfijc=/fit-in/412x246/filters:upscale():fill(f0eff9,1)/media/pic_folder/5iw2NPQNZMjKkFYPVhzCHXYChceDryvhGPQpZZwZ5riX_SUG4dPy.png'
+							width={300}
+							height={150}
+							object-fit="cover"
+							alt='event-logo'
+							priority
+						/>
 					</div>
 				</div>
 			</div>
 		</div>
+
+
+
+
+
+
 	);
 };
 

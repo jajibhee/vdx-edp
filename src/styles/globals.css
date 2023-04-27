@@ -17,11 +17,16 @@
 }
 
 body {
-  background: #fffff;
+  background: #faf9ff;
+  font-family: Barlow, Helvetica, Arial, "sans-serif";
   height: 100vh;
   width: 100%;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.87);
 }
-
+a {
+  color: #462ac8;
+}
 .navBar {
   background: linear-gradient(97deg, #543fed 22%, #462ac8 102%);
 }
