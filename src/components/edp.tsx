@@ -1,4 +1,5 @@
 import Image from "next/image";
+import TableTabs from "./Table/TableTabs";
 
 
 const Edp = () => {
@@ -80,6 +81,7 @@ const Edp = () => {
 						/>
 					</div>
 				</div>
+				<TableTabs />
 			</div>
 		</div>
 
