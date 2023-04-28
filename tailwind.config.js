@@ -12,7 +12,8 @@ module.exports = {
         main: '#6f42c1',
         secondary: '#6610f2',
         vdxBlue: '0d6efd',
-        white: '#ffffff'
+        white: '#ffffff',
+        tabs: 'rgb(215, 225, 254)'
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
