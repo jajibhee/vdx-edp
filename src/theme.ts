@@ -1,7 +1,7 @@
 import { createTheme, alpha } from '@mui/material/styles';
 import DefaultTheme from '@mui/material/styles/createTheme';
 import { grey } from '@mui/material/colors';
-import type { } from '@mui/x-data-grid/themeAugmentation';
+// import type { } from '@mui/x-data-grid/themeAugmentation';
 import { CSSProperties } from 'react';
 
 
@@ -20,7 +20,7 @@ const themeWithPalette = createTheme({
 	},
 });
 
-export const theme: DefaultTheme = createTheme(themeWithPalette, {
+export const theme = createTheme(themeWithPalette, {
 	spacing: (value: number) => value * 4,
 	vdxColors: {
 		mediumGrey: '#f0eff9',

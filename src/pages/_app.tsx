@@ -27,7 +27,7 @@ export default function App({ Component, pageProps }: AppProps, props: any) {
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector('#jss-server-side');
     if (jssStyles) {
-      jssStyles.parentElement.removeChild(jssStyles);
+      jssStyles?.parentElement?.removeChild(jssStyles);
     }
   }, []);
   const { emotionCache = clientSideEmotionCache } = props;

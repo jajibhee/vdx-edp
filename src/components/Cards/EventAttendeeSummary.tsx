@@ -4,7 +4,9 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardHeader from "@mui/material/CardHeader";
 import Grid from "@mui/material/Grid";
-import makeStyles from "@mui/styles/makeStyles";
+import { Theme } from '@mui/material';
+
+import { makeStyles } from "@mui/styles";
 import Skeleton from "@mui/material/Skeleton";
 import React, { useEffect, useState, memo } from "react";
 import { formatNumber } from "../utils/utils";
@@ -17,7 +19,7 @@ import WindowSearch from "public/icons/cards/WindowSearch.svg";
 import Image from "next/image";
 import EventCard from "./EventCard";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme: Theme) => ({
 	root: {
 		backgroundColor: "#F8F8FF",
 		boxShadow: "none",
