@@ -4,85 +4,67 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardHeader from "@mui/material/CardHeader";
 import Grid from "@mui/material/Grid";
-import { makeStyles } from "@mui/styles";
-import { Theme } from '@mui/material';
 
 import Skeleton from "@mui/material/Skeleton";
 import Image from "next/image";
 import WindowSearch from "public/icons/cards/WindowSearch.svg";
 import { formatNumber } from "../utils/utils";
 
-const useStyles = makeStyles((theme: Theme) => ({
-	root: {
-		backgroundColor: "#F8F8FF",
-		boxShadow: "none",
-		borderRadius: 0,
-		height: "100%",
-		display: "flex",
-		flexDirection: "column",
-		[theme.breakpoints.down("sm")]: {
-			minWidth: 300,
-		},
-	},
-
-	cardHeaderRoot: {
-		paddingBottom: 0,
-	},
-	cardContentRoot: {
-		paddingTop: 0,
-		"&:last-child": { paddingBottom: 16 },
-	},
-	cardTitle: {
-		fontWeight: 600,
-		fontSize: 16,
-	},
-	cardValue: {
-		fontWeight: 600,
-		marginRight: 8,
-	},
-	cardSubscript: {
-		fontWeight: 400,
-	},
-	cardDetailRoot: {
-		display: "flex",
-	},
-	gridContainer: {
-		marginTop: 12,
-		[theme.breakpoints.down("sm")]: {
-			display: "flex",
-			flexDirection: "row",
-			flexWrap: "nowrap",
-			overflowY: "auto",
-		},
-	},
-}));
-
 const EventCard = () => {
-	const classes = useStyles();
-
 	return (
 		<Grid item xs={12} md={3} sm={6}>
-			<Card className={classes.root}>
+			<Card
+				sx={{
+					backgroundColor: "#F8F8FF",
+					boxShadow: "none",
+					borderRadius: 0,
+					height: "100%",
+					display: "flex",
+					flexDirection: "column",
+					minWidth: { sm: 300 },
+				}}
+			>
 				<CardHeader
-					className={classes.cardHeaderRoot}
+					sx={{ paddingBottom: 0 }}
 					subheader={
-						<Box display="flex" justifyContent="space-between">
-							<span className={classes.cardTitle}>Event Stats</span>
+						<Box sx={{ display: "flex", justifyContent: "space-between" }}>
+							<Box
+								sx={{
+									fontWeight: 600,
+									fontSize: 16,
+								}}
+							>
+								Event Stats
+							</Box>
 							<Image src={WindowSearch} width={32} height={32} alt="icon-svg" />
 						</Box>
 					}
 				/>
-				<CardContent className={classes.cardContentRoot}>
-					<div className={classes.cardDetailRoot}>
-						<span className={classes.cardValue}>{formatNumber(21062)}</span>
+				<CardContent sx={{ paddingTop: 0, paddingBottom: 16 }}>
+					<Box sx={{ display: "flex" }}>
+						<Box
+							sx={{
+								fontWeight: 600,
+								marginRight: 8,
+							}}
+						>
+							{formatNumber(21062)}
+						</Box>
 
-						<span className={classes.cardSubscript}>attendees on Vendelux</span>
-					</div>
-					<div className={classes.cardDetailRoot}>
-						<span className={classes.cardValue}>{formatNumber(791)}</span>
-						<span className={classes.cardSubscript}>exhibitors and sponsors
-						</span>
-					</div>
+						<Box sx={{ fontWeight: 400 }}>attendees on Vendelux</Box>
+					</Box>
+					<Box sx={{ display: "flex" }}>
+						<Box
+							sx={{
+								fontWeight: 600,
+								marginRight: 8,
+							}}
+						>
+							{formatNumber(791)}
+						</Box>
+
+						<Box sx={{ fontWeight: 400 }}>exhibitors and sponsors</Box>
+					</Box>
 				</CardContent>
 			</Card>
 		</Grid>

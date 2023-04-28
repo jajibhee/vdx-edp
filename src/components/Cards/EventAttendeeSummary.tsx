@@ -1,12 +1,12 @@
 /* eslint-disable react/display-name */
-import Box from "@mui/material/Box";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardHeader from "@mui/material/CardHeader";
-import Grid from "@mui/material/Grid";
-import { Theme } from '@mui/material';
+// import Box from "@mui/material/Box";
+// import Card from "@mui/material/Card";
+// import CardContent from "@mui/material/CardContent";
+// import CardHeader from "@mui/material/CardHeader";
+// import Grid from "@mui/material/Grid";
 
-import { makeStyles } from "@mui/styles";
+import { Box, Card, CardContent, CardHeader, Grid } from "@mui/material"
+
 import Skeleton from "@mui/material/Skeleton";
 import React, { useEffect, useState, memo } from "react";
 import { formatNumber } from "../utils/utils";
@@ -18,51 +18,6 @@ import WindowSearch from "public/icons/cards/WindowSearch.svg";
 
 import Image from "next/image";
 import EventCard from "./EventCard";
-
-const useStyles = makeStyles((theme: Theme) => ({
-	root: {
-		backgroundColor: "#F8F8FF",
-		boxShadow: "none",
-		borderRadius: 0,
-		height: "100%",
-		display: "flex",
-		flexDirection: "column",
-		[theme.breakpoints.down("sm")]: {
-			minWidth: 300,
-		},
-	},
-
-	cardHeaderRoot: {
-		paddingBottom: 0,
-	},
-	cardContentRoot: {
-		paddingTop: 0,
-		"&:last-child": { paddingBottom: 16 },
-	},
-	cardTitle: {
-		fontWeight: 600,
-		fontSize: 16,
-	},
-	cardValue: {
-		fontWeight: 600,
-		marginRight: 8,
-	},
-	cardSubscript: {
-		fontWeight: 400,
-	},
-	cardDetailRoot: {
-		display: "flex",
-	},
-	gridContainer: {
-		marginTop: 12,
-		[theme.breakpoints.down("sm")]: {
-			display: "flex",
-			flexDirection: "row",
-			flexWrap: "nowrap",
-			overflowY: "auto",
-		},
-	},
-}));
 
 const attendeeSummariesData = [
 	{
@@ -88,13 +43,13 @@ const attendeeSummariesData = [
 	},
 ];
 
-const initialEventStats = {
-	key: "eventStats",
-	title: "Event stats",
-	Icon: WindowSearch,
-	skeleton: 2,
-	loading: true,
-};
+// const initialEventStats = {
+// 	key: "eventStats",
+// 	title: "Event stats",
+// 	Icon: WindowSearch,
+// 	skeleton: 2,
+// 	loading: true,
+// };
 
 const mapCardValues = (cards = []) =>
 	cards.map((card: any) => ({
@@ -106,9 +61,8 @@ const EventAttendeeSummary = memo(({ data }: any) => {
 	const [eventAttendeeSummary, setEventAttendeeSummary] = useState(
 		attendeeSummariesData
 	);
-	const [eventStats, setEventStats] = useState(initialEventStats);
+	// const [eventStats, setEventStats] = useState(initialEventStats);
 
-	const classes = useStyles();
 
 	useEffect(() => {
 
@@ -130,55 +84,52 @@ const EventAttendeeSummary = memo(({ data }: any) => {
 				{cards.map((summary: any) => {
 					return (
 						<Grid item xs={12} md={3} sm={6} key={summary.key}>
-							<Card className={classes.root}>
+							<Card sx={{
+								backgroundColor: "#F8F8FF",
+								boxShadow: "none",
+								borderRadius: 0,
+								height: "100%",
+								display: "flex",
+								flexDirection: "column",
+								minWidth: { sm: 300 },
+							}}>
 								<CardHeader
-									className={classes.cardHeaderRoot}
+									sx={{ paddingBottom: 0 }}
 									subheader={
-										<Box display="flex" justifyContent="space-between">
-											<span className={classes.cardTitle}>{summary.title}</span>
-											<Image
-												src={summary.Icon}
-												width={32}
-												height={32}
-												alt="icon-svg"
-											/>
-
+										<Box sx={{ display: "flex", justifyContent: "space-between" }}>
+											<Box sx={{
+												fontWeight: 600,
+												fontSize: 16,
+											}}>
+												{summary.title}
+											</Box>
+											<Image src={summary.Icon} width={32} height={32} alt="icon-svg" />
 										</Box>
 									}
 								/>
-								<CardContent className={classes.cardContentRoot}>
+								<CardContent sx={{ paddingTop: 0, paddingBottom: 16 }}>
 									{!summary.loading &&
 										(summary.cardValues || []).map(
 											({ value, subscript }: any, index: number) => (
-												<div
-													className={classes.cardDetailRoot}
-													key={`${summary.key}-${index}`}
-												>
+												<Box sx={{ display: "flex" }} key={`${summary.key}-${index}`}>
 													{(value || value === 0) && (
-														<span className={classes.cardValue}>
+														<Box sx={{
+															fontWeight: 600,
+															marginRight: 8,
+														}}>
 															{typeof value === "number"
 																? formatNumber(value)
 																: value}
-														</span>
+														</Box>
 													)}
 													{subscript && (
-														<span className={classes.cardSubscript}>
+														<Box sx={{ fontWeight: 400 }}>
 															{subscript}
-														</span>
+														</Box>
 													)}
-												</div>
+												</Box>
 											)
 										)}
-									{/* {summary.loading && (
-											<>
-												{[...Array(summary.skeleton).keys()].map((index) => (
-													<Skeleton
-														animation="wave"
-														key={`summary-skeleton-${index}`}
-													/>
-												))}
-											</>
-										)} */}
 								</CardContent>
 							</Card>
 						</Grid>
@@ -188,8 +139,9 @@ const EventAttendeeSummary = memo(({ data }: any) => {
 		);
 	};
 
+
 	return (
-		<Grid container spacing={5} className={classes.gridContainer}>
+		<Grid container spacing={5} sx={{ marginTop: 12, display: "flex", flexDirection: { xs: "column", sm: "row" }, flexWrap: "nowrap", overflowY: "auto" }}>
 			<EventCard />
 			<InfoCards cards={eventAttendeeSummary} />
 		</Grid>
