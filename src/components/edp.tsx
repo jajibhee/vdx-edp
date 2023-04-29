@@ -39,7 +39,7 @@ const Edp = ({
 		return <span className="pl-1"> | {link} </span>;
 	};
 	return (
-		<div className="flex flex-col md:flex-row mx-4 text-black md:mx-24 justify-between">
+		<div className="flex flex-col md:flex-row text-black justify-between">
 			<div className="mt-12">
 				<div className="flex justify-between items-center">
 					<h1 className="text-xl font-semibold">{title}</h1>
@@ -109,8 +109,8 @@ const Edp = ({
 					<div className="flex justify-center items-center">
 						<Image
 							src="https://i.vendelux.com/--PpTyxSDdBfCpLW7Qojd5hfijc=/fit-in/412x246/filters:upscale():fill(f0eff9,1)/media/pic_folder/5iw2NPQNZMjKkFYPVhzCHXYChceDryvhGPQpZZwZ5riX_SUG4dPy.png"
-							width={300}
-							height={150}
+							width={200}
+							height={120}
 							object-fit="cover"
 							alt="event-logo"
 							priority

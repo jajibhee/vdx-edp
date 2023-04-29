@@ -4,6 +4,7 @@ import Edp from "@/components/edp";
 import Layout from "@/components/Layout/Layout";
 import TableContainer from "@/components/Table/TableContainer";
 import { getFormattedDate } from "@/components/utils/utils";
+import useSWR from 'swr'
 
 interface ISSRProps {
   sponsors: any;
@@ -12,6 +13,8 @@ interface ISSRProps {
   eventSummary: any;
   seo: ISeo;
 }
+const fetcher = (...args: any) => fetch(args).then((res) => res.json())
+
 export default function Home({
   sponsors,
   attendees,
@@ -20,6 +23,8 @@ export default function Home({
   seo,
 }: ISSRProps) {
   const { description, title, pathname, imgUrl } = seo;
+
+  const { data, error } = useSWR('https://david.vendelux.com/ajax/event_attendee_summaries/53af1bf6-91a2-409f-9d89-db30b1540325/', fetcher)
 
   return (
     <div>
@@ -59,7 +64,7 @@ export async function getServerSideProps({ req, res }: any) {
     "Cache-Control",
     "public, s-maxage=10, stale-while-revalidate=59"
   );
-  const [sponsors, attendees, attendeeSummary, eventSummary] =
+  const [sponsors, attendees, eventSummary] =
     await Promise.all([
       fetch(
         `https://david.vendelux.com/ajax/event_sponsors/53af1bf6-91a2-409f-9d89-db30b1540325/`
@@ -67,9 +72,7 @@ export async function getServerSideProps({ req, res }: any) {
       fetch(
         "https://david.vendelux.com/ajax/event_attendees/53af1bf6-91a2-409f-9d89-db30b1540325/"
       ).then((res) => res.json()),
-      fetch(
-        "https://david.vendelux.com/ajax/event_attendee_summaries/53af1bf6-91a2-409f-9d89-db30b1540325/"
-      ).then((res) => res.json()),
+
       fetch(
         `https://david.vendelux.com/ajax/event_summary/53af1bf6-91a2-409f-9d89-db30b1540325/`
       ).then((res) => res.json()),
@@ -84,5 +87,5 @@ export async function getServerSideProps({ req, res }: any) {
   };
 
   // Pass data to the page via props
-  return { props: { sponsors, attendees, attendeeSummary, eventSummary, seo } };
+  return { props: { sponsors, attendees, eventSummary, seo } };
 }
