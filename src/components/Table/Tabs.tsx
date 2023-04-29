@@ -1,37 +1,69 @@
-import React from "react";
+import * as React from 'react';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
+import TableTabs from './TableTabs';
+import DataTable from './EdpTable';
+import AttendeesTable from './AttendeesTable';
+import SponsorsTable from './SponsorsTable';
 
-const Tabs = () => {
+interface TabPanelProps {
+	children?: React.ReactNode;
+	index: number;
+	value: number;
+}
+
+function TabPanel(props: TabPanelProps) {
+	const { children, value, index, ...other } = props;
+
 	return (
-		<div className="bg-tabs">
-			<div role="tablist">
-				<button
-					className="px-2 py-4 bg-white"
-					type="button"
-					role="tab"
-					aria-selected="true"
-					aria-controls="mui-p-38185-P-attendee"
-					id="mui-p-38185-T-attendee"
-				>
-					<div className="">
-						Attendees<span className="jss48">(21,062)</span>
-					</div>
-				</button>
-				<button
-					className="px-2 py-4"
-
-					type="button"
-					role="tab"
-					aria-selected="false"
-					aria-controls="mui-p-38185-P-sponsor"
-					id="mui-p-38185-T-sponsor"
-				>
-					<div className="MuiBox-root css-70qvj9">
-						Exhibitors and sponsors<span className="jss48">(791)</span>
-					</div>
-				</button>
-			</div>
+		<div
+			role="tabpanel"
+			hidden={value !== index}
+			id={`simple-tabpanel-${index}`}
+			aria-labelledby={`simple-tab-${index}`}
+			{...other}
+		>
+			{value === index && (
+				<Box sx={{ p: 3 }}>
+					<Box>{children}</Box>
+				</Box>
+			)}
 		</div>
 	);
-};
+}
 
-export default Tabs;
+function a11yProps(index: number) {
+	return {
+		id: `simple-tab-${index}`,
+		'aria-controls': `simple-tabpanel-${index}`,
+	};
+}
+
+export default function BasicTabs() {
+	const [value, setValue] = React.useState(0);
+
+	const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+		setValue(newValue);
+	};
+
+	return (
+		<Box sx={{ width: '100%' }}>
+			<Box sx={{ borderBottom: 1, borderColor: 'divider', background: 'rgb(215, 225, 254)' }}>
+				<Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+					<Tab label="Attendees(Iono)" {...a11yProps(0)} />
+					<Tab label="Exhibitors and sponsors" {...a11yProps(1)} />
+				</Tabs>
+			</Box>
+			<TabPanel value={value} index={0}>
+				<AttendeesTable />
+			</TabPanel>
+			<TabPanel value={value} index={1}>
+				<SponsorsTable />
+			</TabPanel>
+
+		</Box>
+	);
+}
+

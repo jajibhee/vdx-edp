@@ -40,3 +40,7 @@ a {
 .btn-blue:hover {
   @apply bg-blue-700;
 }
+
+.btn-pill {
+  @apply h-10 px-6 font-semibold rounded border border-slate-200 text-slate-900;
+}

@@ -1,9 +1,3 @@
-/* eslint-disable react/display-name */
-// import Box from "@mui/material/Box";
-// import Card from "@mui/material/Card";
-// import CardContent from "@mui/material/CardContent";
-// import CardHeader from "@mui/material/CardHeader";
-// import Grid from "@mui/material/Grid";
 
 import { Box, Card, CardContent, CardHeader, Grid } from "@mui/material"
 
@@ -43,13 +37,6 @@ const attendeeSummariesData = [
 	},
 ];
 
-// const initialEventStats = {
-// 	key: "eventStats",
-// 	title: "Event stats",
-// 	Icon: WindowSearch,
-// 	skeleton: 2,
-// 	loading: true,
-// };
 
 const mapCardValues = (cards = []) =>
 	cards.map((card: any) => ({
@@ -57,12 +44,11 @@ const mapCardValues = (cards = []) =>
 		subscript: card?.name,
 	}));
 
+// eslint-disable-next-line react/display-name
 const EventAttendeeSummary = memo(({ data }: any) => {
 	const [eventAttendeeSummary, setEventAttendeeSummary] = useState(
 		attendeeSummariesData
 	);
-	// const [eventStats, setEventStats] = useState(initialEventStats);
-
 
 	useEffect(() => {
 
