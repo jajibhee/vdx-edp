@@ -1,7 +1,7 @@
 import React from 'react'
 import Tabs from './Tabs'
 
-const TableContainer = () => {
+const TableContainer = ({ attendeesCount, sponsorsCount, attendees, sponsors }: any) => {
 	return (
 		<section className="py-1 bg-blueGray-50">
 
@@ -10,7 +10,7 @@ const TableContainer = () => {
 					<div className="rounded-t mb-0 border-0">
 						<div className="flex flex-wrap items-center">
 							<div className="relative w-full max-w-full flex-grow ">
-								<Tabs />
+								<Tabs attendeesCount={attendeesCount} sponsorsCount={sponsorsCount} attendees={attendees} sponsors={sponsors} />
 							</div>
 
 

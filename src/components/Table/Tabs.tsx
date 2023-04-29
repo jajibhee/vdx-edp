@@ -7,10 +7,13 @@ import Box from '@mui/material/Box';
 import AttendeesTable from './AttendeesTable';
 import SponsorsTable from './SponsorsTable';
 
+
 interface TabPanelProps {
 	children?: React.ReactNode;
 	index: number;
 	value: number;
+	attendeesCount?: number;
+	sponsorsCount?: number;
 }
 
 function TabPanel(props: TabPanelProps) {
@@ -40,7 +43,7 @@ function a11yProps(index: number) {
 	};
 }
 
-export default function BasicTabs() {
+export default function BasicTabs({ attendeesCount, sponsorsCount, sponsors, attendees }: any) {
 	const [value, setValue] = React.useState(0);
 
 	const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -51,15 +54,15 @@ export default function BasicTabs() {
 		<Box sx={{ width: '100%' }}>
 			<Box sx={{ borderBottom: 1, borderColor: 'divider', background: 'rgb(215, 225, 254)' }}>
 				<Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-					<Tab label="Attendees(Iono)" {...a11yProps(0)} />
-					<Tab label="Exhibitors and sponsors" {...a11yProps(1)} />
+					<Tab label={`Attendees(${attendeesCount})`} {...a11yProps(0)} />
+					<Tab label={`Exhibitors and sponsors(${sponsorsCount})`} {...a11yProps(1)} />
 				</Tabs>
 			</Box>
 			<TabPanel value={value} index={0}>
-				<AttendeesTable />
+				<AttendeesTable attendees={attendees} />
 			</TabPanel>
 			<TabPanel value={value} index={1}>
-				<SponsorsTable />
+				<SponsorsTable sponsors={sponsors} />
 			</TabPanel>
 
 		</Box>

@@ -1,6 +1,9 @@
-import React from 'react'
 
-const AttendeesTable = () => {
+// import { useAttendees } from '../hooks/useAttendees';
+const AttendeesTable = ({ attendees }: any) => {
+
+
+
 	return (
 		<div>
 			<div className="flex items-center justify-between">
@@ -23,22 +26,19 @@ const AttendeesTable = () => {
 					<thead>
 						<tr>
 							<th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-								Logo
-							</th>
-							<th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
 								Name
-							</th>
-							<th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-								Organization
 							</th>
 							<th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
 								Title
 							</th>
 							<th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-								Status
+								Organization
 							</th>
 							<th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
 								Speaking
+							</th>
+							<th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+								Status
 							</th>
 							<th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
 								Prospects
@@ -47,58 +47,33 @@ const AttendeesTable = () => {
 					</thead>
 
 					<tbody>
-						<tr>
-							<th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
-								Here
-							</th>
-							<th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
-								/argon/
-							</th>
-							<td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
-								4,569
-							</td>
-							<td className="border-t-0 px-6 align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-								340
-							</td>
-							<td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-								<i className="fas fa-arrow-up text-emerald-500 mr-4"></i>
-								46,53%
-							</td>
-							<td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-								<i className="fas fa-arrow-up text-emerald-500 mr-4"></i>
-								46,53%
-							</td>
-							<td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-								<i className="fas fa-arrow-up text-emerald-500 mr-4"></i>
-								46,53%
-							</td>
-						</tr>
-						<tr>
-							<th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
-								Here
-							</th>
-							<th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
-								/argon/
-							</th>
-							<td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
-								4,569
-							</td>
-							<td className="border-t-0 px-6 align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-								340
-							</td>
-							<td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-								<i className="fas fa-arrow-up text-emerald-500 mr-4"></i>
-								46,53%
-							</td>
-							<td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-								<i className="fas fa-arrow-up text-emerald-500 mr-4"></i>
-								46,53%
-							</td>
-							<td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-								<i className="fas fa-arrow-up text-emerald-500 mr-4"></i>
-								46,53%
-							</td>
-						</tr>
+						{attendees && attendees.map((e: any, i: number) => (
+
+							<tr key={i}>
+								<th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
+									{e.name}
+								</th>
+								<th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
+									{e.title}
+								</th>
+								<td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
+									{e.organization}
+								</td>
+								<td className="border-t-0 px-6 align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+									{e.speaking}
+								</td>
+								<td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+									<i className="fas fa-arrow-up text-emerald-500 mr-4"></i>
+									{e.tatus}
+								</td>
+								<td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+									<i className="fas fa-arrow-up text-emerald-500 mr-4"></i>
+									{e.prospect}
+								</td>
+
+							</tr>
+						))}
+
 
 					</tbody>
 

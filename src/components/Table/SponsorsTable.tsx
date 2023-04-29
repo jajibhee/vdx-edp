@@ -1,6 +1,8 @@
-import React from 'react'
+// import { useSponsor } from "../hooks/useSponsors"
 
-const SponsorsTable = () => {
+
+const SponsorsTable = ({ sponsors }: any) => {
+
 	return (
 		<div>
 
@@ -24,82 +26,48 @@ const SponsorsTable = () => {
 					<thead>
 						<tr>
 							<th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-								Logo
-							</th>
-							<th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-								Name
-							</th>
-							<th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
 								Organization
 							</th>
 							<th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-								Title
+								Events
+							</th>
+							<th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+								Members
 							</th>
 							<th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
 								Status
 							</th>
 							<th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-								Speaking
+								Prospect
 							</th>
-							<th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-								Prospects
-							</th>
+
 						</tr>
 					</thead>
 
 					<tbody>
-						<tr>
-							<th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
-								Here
-							</th>
-							<th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
-								/argon/
-							</th>
-							<td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
-								4,569
-							</td>
-							<td className="border-t-0 px-6 align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-								340
-							</td>
-							<td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-								<i className="fas fa-arrow-up text-emerald-500 mr-4"></i>
-								46,53%
-							</td>
-							<td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-								<i className="fas fa-arrow-up text-emerald-500 mr-4"></i>
-								46,53%
-							</td>
-							<td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-								<i className="fas fa-arrow-up text-emerald-500 mr-4"></i>
-								46,53%
-							</td>
-						</tr>
-						<tr>
-							<th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
-								Here
-							</th>
-							<th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
-								/argon/
-							</th>
-							<td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
-								4,569
-							</td>
-							<td className="border-t-0 px-6 align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-								340
-							</td>
-							<td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-								<i className="fas fa-arrow-up text-emerald-500 mr-4"></i>
-								46,53%
-							</td>
-							<td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-								<i className="fas fa-arrow-up text-emerald-500 mr-4"></i>
-								46,53%
-							</td>
-							<td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-								<i className="fas fa-arrow-up text-emerald-500 mr-4"></i>
-								46,53%
-							</td>
-						</tr>
+						{sponsors && sponsors?.map((s: any, i: number) => (
+
+							<tr key={i}>
+								<th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
+									{s.organization}
+								</th>
+								<th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
+									{s.events}
+								</th>
+								<td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
+									{s.members}
+								</td>
+								<td className="border-t-0 px-6 align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+									{s.status}
+								</td>
+								<td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+									<i className="fas fa-arrow-up text-emerald-500 mr-4"></i>
+									{s.prospect}
+								</td>
+
+							</tr>
+						))}
+
 
 					</tbody>
 
