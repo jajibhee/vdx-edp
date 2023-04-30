@@ -61,8 +61,8 @@ export default function BasicTabs({ attendeesCount, sponsorsCount, sponsors, att
 				</Tabs>
 			</Box>
 			<TabPanel value={value} index={0}>
-				{/* <AttendeesTable attendees={attendees} /> */}
-				<ATable />
+				<AttendeesTable attendees={attendees} />
+				{/* <ATable /> */}
 			</TabPanel>
 			<TabPanel value={value} index={1}>
 				{/* <SponsorsTable sponsors={sponsors} /> */}

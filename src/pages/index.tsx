@@ -21,8 +21,6 @@ export default function Home({
 }: ISSRProps) {
   const { description, title, pathname, imgUrl } = seo;
 
-  console.log(sponsors.all_sponsors)
-  console.log(attendees)
   return (
     <div>
       <Seo
