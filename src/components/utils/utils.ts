@@ -39,3 +39,4 @@ export const truncateString = (str: string, num: number) => {
 	// Return str truncated with '...' concatenated to the end of str.
 	return str.slice(0, num) + '...'
 }
+

@@ -3,10 +3,11 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import { Button } from '@/components/Buttons/Button'
+import Autocomplete from '../Algolia/Autocomplete'
 
 const navigation = [
-	{ name: 'Home', href: '#', current: true },
-	{ name: 'Explore', href: '#', current: false },
+	{ name: 'Home', href: '#', current: false },
+	{ name: 'Explore', href: '#', current: true },
 	{ name: 'Prospects', href: '#', current: false },
 	{ name: 'Planner', href: '#', current: false },
 ]
@@ -43,6 +44,8 @@ export default function NavBar() {
 										height={37}
 										priority
 									/>
+									<Autocomplete />
+
 								</div>
 								<div className="hidden sm:ml-6 sm:block">
 									<div className="flex items-center justify-center">
@@ -51,7 +54,7 @@ export default function NavBar() {
 												key={item.name}
 												href={item.href}
 												className={classNames(
-													item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+													item.current ? 'text-white' : 'text-gray-300 hover:text-white',
 													'rounded-md px-3 py-2 text-sm font-medium'
 												)}
 												aria-current={item.current ? 'page' : undefined}
@@ -78,7 +81,7 @@ export default function NavBar() {
 									as="a"
 									href={item.href}
 									className={classNames(
-										item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+										item.current ? 'text-white' : 'text-gray-300 hover:text-white',
 										'block rounded-md px-3 py-2 text-base font-medium'
 									)}
 									aria-current={item.current ? 'page' : undefined}
@@ -89,7 +92,8 @@ export default function NavBar() {
 						</div>
 					</Disclosure.Panel>
 				</>
-			)}
-		</Disclosure>
+			)
+			}
+		</Disclosure >
 	)
 }

@@ -6,6 +6,8 @@ import Box from '@mui/material/Box';
 
 import AttendeesTable from './AttendeesTable';
 import SponsorsTable from './SponsorsTable';
+import ATable from './ATable';
+import STable from './STable';
 
 
 interface TabPanelProps {
@@ -59,10 +61,12 @@ export default function BasicTabs({ attendeesCount, sponsorsCount, sponsors, att
 				</Tabs>
 			</Box>
 			<TabPanel value={value} index={0}>
-				<AttendeesTable attendees={attendees} />
+				{/* <AttendeesTable attendees={attendees} /> */}
+				<ATable />
 			</TabPanel>
 			<TabPanel value={value} index={1}>
-				<SponsorsTable sponsors={sponsors} />
+				{/* <SponsorsTable sponsors={sponsors} /> */}
+				<STable />
 			</TabPanel>
 
 		</Box>
