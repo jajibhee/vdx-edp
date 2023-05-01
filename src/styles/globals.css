@@ -238,3 +238,10 @@ table {
   background-color: #000000b3;
   padding: 12px;
 }
+
+.footerLogo {
+  background: no-repeat
+    url(https://david.vendelux.com/frontend/static/media/blue-full-logo.086da5c289de4df08131.svg);
+  background-position: 50%;
+  background-size: 100%;
+}

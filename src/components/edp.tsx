@@ -43,7 +43,7 @@ const Edp = ({
 			<div className="mt-12">
 				<div className="flex justify-between items-center">
 					<h1 className="text-xl font-semibold">{title}</h1>
-					<div className="flex justify-between items-center">
+					<div className="flex justify-between items-center text-main cursor-pointer main">
 						<FavoriteBorderIcon />
 						<h1 className="ml-2">Save to Planner</h1>
 					</div>
