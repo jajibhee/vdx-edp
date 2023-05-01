@@ -3,11 +3,12 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 
 import Box from '@mui/material/Box';
-
+UnlockEvent
 import AttendeesTable from './AttendeesTable';
 import SponsorsTable from './SponsorsTable';
 import ATable from './ATable';
 import STable from './STable';
+import UnlockEvent from '../UnlockEvent';
 
 
 interface TabPanelProps {
@@ -32,8 +33,10 @@ function TabPanel(props: TabPanelProps) {
 			{value === index && (
 				<Box sx={{ p: 3 }}>
 					<Box>{children}</Box>
+					<UnlockEvent />
 				</Box>
 			)}
+
 		</div>
 	);
 }
@@ -62,11 +65,12 @@ export default function BasicTabs({ attendeesCount, sponsorsCount, sponsors, att
 			</Box>
 			<TabPanel value={value} index={0}>
 				<AttendeesTable attendees={attendees} />
+
 				{/* <ATable /> */}
 			</TabPanel>
 			<TabPanel value={value} index={1}>
-				{/* <SponsorsTable sponsors={sponsors} /> */}
-				<STable />
+				<SponsorsTable sponsors={sponsors} />
+				{/* <STable /> */}
 			</TabPanel>
 
 		</Box>

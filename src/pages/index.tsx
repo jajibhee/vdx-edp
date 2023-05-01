@@ -55,6 +55,9 @@ export default function Home({
 }
 
 export async function getServerSideProps({ req, res }: any) {
+  // TODO: infer props
+  // infer props with xport const getServerSideProps: GetServerSideProps<{ data: Data }> = async (context) => {
+
   // Fetch data from external API
   res.setHeader(
     "Cache-Control",

@@ -219,3 +219,22 @@ a {
 
 .aisSearchButton:hover {
 }
+
+table {
+  box-sizing: box-border;
+  position: relative;
+  z-index: 1;
+}
+
+.overlay {
+  box-sizing: box-border;
+
+  /* position: absolute;
+  top: 100%;
+  left: 0; */
+  width: 100%;
+  height: 50%;
+  z-index: 2;
+  background-color: #000000b3;
+  padding: 12px;
+}

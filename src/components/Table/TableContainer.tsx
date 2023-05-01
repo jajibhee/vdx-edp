@@ -12,9 +12,6 @@ const TableContainer = ({ attendeesCount, sponsorsCount, attendees, sponsors }: 
 							<div className="relative w-full max-w-full flex-grow ">
 								<Tabs attendeesCount={attendeesCount} sponsorsCount={sponsorsCount} attendees={attendees} sponsors={sponsors} />
 							</div>
-
-
-
 						</div>
 					</div>
 

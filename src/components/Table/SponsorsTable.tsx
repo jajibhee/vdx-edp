@@ -1,9 +1,9 @@
+import Image from "next/image";
 import Pill from "../Buttons/Pill"
-
-
 
 const SponsorsTable = ({ sponsors }: any) => {
 	const pills: any[] = ['Status', 'Prospects attending', 'Owners', 'Clear filters']
+	const firstThreeSponsors = sponsors.slice(0, 3);
 
 	return (
 		<div>
@@ -29,6 +29,9 @@ const SponsorsTable = ({ sponsors }: any) => {
 					<thead>
 						<tr>
 							<th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+
+							</th>
+							<th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
 								Organization
 							</th>
 							<th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
@@ -48,9 +51,12 @@ const SponsorsTable = ({ sponsors }: any) => {
 					</thead>
 
 					<tbody>
-						{sponsors && sponsors?.map((s: any, i: number) => (
+						{firstThreeSponsors && firstThreeSponsors?.map((s: any, i: number) => (
 
 							<tr key={i}>
+								<th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
+									<Image className="rounded-full" height="20" width="20" src={s.image} alt='table-img' />
+								</th>
 								<th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
 									{s.organization}
 								</th>

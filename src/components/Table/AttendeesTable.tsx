@@ -1,8 +1,12 @@
 import React from "react"
 import Pill from "../Buttons/Pill"
+import Image from "next/image";
+import UnlockEvent from "../UnlockEvent";
 
 // import { useAttendees } from '../hooks/useAttendees';
 const AttendeesTable = ({ attendees }: any) => {
+
+	const firstThreeAttendees = attendees.slice(0, 3);
 
 
 	const pills: any[] = ['Job title', 'Organizations', 'Speaker', 'Status', 'Prospects attending', 'Owners', 'Clear filters']
@@ -18,7 +22,7 @@ const AttendeesTable = ({ attendees }: any) => {
 						<input className=" disabled focus:ring-2 focus:ring-blue-500 focus:outline-none appearance-none w-full text-sm leading-6 text-slate-900 placeholder-slate-400 rounded-md py-2 pl-10 ring-1 ring-slate-200 shadow-sm" type="text" aria-label="Filter projects" placeholder="Search attendees..." />
 					</form>
 				</div>
-				<div className="flex pill-container mt-4">
+				<div className="flex pill-container flex-wrap mt-4">
 					{pills?.map((pill: string, i: number) => (
 						<span key={i} className="mr-2 ">
 							<Pill text={pill} />
@@ -56,12 +60,12 @@ const AttendeesTable = ({ attendees }: any) => {
 					</thead>
 
 					<tbody>
-						{attendees && attendees.map((e: any, i: number) => (
+						{firstThreeAttendees && firstThreeAttendees.map((e: any, i: number) => (
 
 							<tr key={i}>
 
 								<th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
-
+									<Image className="rounded-full" height="20" width="20" src={e.image} alt='table-img' />
 								</th>
 								<th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
 									{e.name}
@@ -87,10 +91,10 @@ const AttendeesTable = ({ attendees }: any) => {
 							</tr>
 						))}
 
-
 					</tbody>
 
 				</table>
+
 			</div></div>
 	)
 }
