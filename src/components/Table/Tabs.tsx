@@ -6,8 +6,6 @@ import Box from '@mui/material/Box';
 UnlockEvent
 import AttendeesTable from './AttendeesTable';
 import SponsorsTable from './SponsorsTable';
-import ATable from './ATable';
-import STable from './STable';
 import UnlockEvent from '../UnlockEvent';
 
 
@@ -65,12 +63,9 @@ export default function BasicTabs({ attendeesCount, sponsorsCount, sponsors, att
 			</Box>
 			<TabPanel value={value} index={0}>
 				<AttendeesTable attendees={attendees} />
-
-				{/* <ATable /> */}
 			</TabPanel>
 			<TabPanel value={value} index={1}>
 				<SponsorsTable sponsors={sponsors} />
-				{/* <STable /> */}
 			</TabPanel>
 
 		</Box>
