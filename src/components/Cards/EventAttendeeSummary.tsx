@@ -45,7 +45,8 @@ const mapCardValues = (cards = []) =>
 	}));
 
 // eslint-disable-next-line react/display-name
-const EventAttendeeSummary = memo(({ data }: any) => {
+const EventAttendeeSummary = memo((props: any) => {
+	const { data, attendeesCount, sponsorsCount } = props
 	const [eventAttendeeSummary, setEventAttendeeSummary] = useState(
 		attendeeSummariesData
 	);
@@ -130,7 +131,7 @@ const EventAttendeeSummary = memo(({ data }: any) => {
 		<div className="mx-4 text-black md:mx-24 mb-8 md:mb-16">
 
 			<Grid container spacing={5} sx={{ marginTop: 12, display: "flex", flexDirection: { xs: "column", sm: "row" }, flexWrap: "nowrap", overflowY: "auto" }}>
-				<EventCard />
+				<EventCard attendeesCount={attendeesCount} sponsorsCount={sponsorsCount} />
 				<InfoCards cards={eventAttendeeSummary} />
 			</Grid>
 		</div>

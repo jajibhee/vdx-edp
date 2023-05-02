@@ -45,9 +45,17 @@ export default function Home({
             costHigh={eventSummary?.cost_high}
             costLow={eventSummary?.cost_low}
           />
-          <EventAttendeeSummary data={attendeeSummary} />
-          <TableContainer attendeesCount={eventSummary.total_people} sponsorsCount={eventSummary.total_orgs} attendees={attendees?.all_attendees} sponsors={sponsors?.all_sponsors} />
-
+          <EventAttendeeSummary
+            data={attendeeSummary}
+            sponsorsCount={eventSummary.total_orgs}
+            attendeesCount={eventSummary.total_people}
+          />
+          <TableContainer
+            attendeesCount={eventSummary.total_people}
+            sponsorsCount={eventSummary.total_orgs}
+            attendees={attendees?.all_attendees}
+            sponsors={sponsors?.all_sponsors}
+          />
         </div>
       </Layout>
     </div>

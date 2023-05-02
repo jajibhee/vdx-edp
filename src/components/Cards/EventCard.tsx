@@ -10,7 +10,7 @@ import Image from "next/image";
 import WindowSearch from "public/icons/cards/WindowSearch.svg";
 import { formatNumber } from "../utils/utils";
 
-const EventCard = () => {
+const EventCard = ({ attendeesCount, sponsorsCount }: any) => {
 	return (
 		<Grid item xs={12} md={3} sm={6}>
 			<Card
@@ -48,7 +48,7 @@ const EventCard = () => {
 								marginRight: 8,
 							}}
 						>
-							{formatNumber(21062)}
+							{formatNumber(attendeesCount)}
 						</Box>
 
 						<Box sx={{ fontWeight: 400 }}>attendees on Vendelux</Box>
@@ -60,7 +60,7 @@ const EventCard = () => {
 								marginRight: 8,
 							}}
 						>
-							{formatNumber(791)}
+							{formatNumber(sponsorsCount)}
 						</Box>
 
 						<Box sx={{ fontWeight: 400 }}>exhibitors and sponsors</Box>
