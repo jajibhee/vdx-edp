@@ -24,7 +24,7 @@ const AttendeesTable = ({ attendees }: any) => {
 			<Box display="flex" alignItems="center">
 				{status === 'confirmed' && <CheckCircleIcon />}
 				{status === 'predicted' && <TrackChanges />}
-				<span style={{ marginLeft: 4 }}>{status}</span>
+				<span className='capitalize' style={{ marginLeft: 4 }}>{status}</span>
 			</Box>
 		) : (
 			<></>
@@ -66,9 +66,9 @@ const AttendeesTable = ({ attendees }: any) => {
 						</svg>
 
 						<input
-							className=" disabled focus:ring-2 focus:ring-blue-500 focus:outline-none appearance-none w-full md:w-96 text-sm leading-6 text-slate-900 placeholder-slate-400 rounded-full py-1 pl-10 ring-1 ring-slate-200 shadow-sm"
+							className=" disabled w-full md:w-96 text-sm leading-6 text-slate-900 placeholder-slate-400 rounded-full py-1 pl-10 ring-1 ring-slate-200 shadow-sm"
+							disabled
 							type="text"
-							aria-label="Filter projects"
 							placeholder="Search attendees..."
 						/>
 					</form>
@@ -135,7 +135,6 @@ const AttendeesTable = ({ attendees }: any) => {
 									</td>
 									<td className="border-t-0 px-6 align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
 										<Status status={e.status.toLowerCase()} />
-
 									</td>
 									<td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
 										<i className="fas fa-arrow-up text-emerald-500 mr-4"></i>

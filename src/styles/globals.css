@@ -16,6 +16,10 @@
   }
 }
 
+th,
+td {
+  font-weight: normal;
+}
 body {
   background: #faf9ff;
   font-family: Barlow, Helvetica, Arial, "sans-serif";
