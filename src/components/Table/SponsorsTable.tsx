@@ -9,7 +9,7 @@ const SponsorsTable = ({ sponsors }: any) => {
 		<div>
 
 
-			<div className="flex">
+			<div className="flex pill-container flex-wrap mt-4">
 				{pills?.map((pill: string, i: number) => (
 					<span key={i} className="mr-2 pill-container">
 						<Pill text={pill} />
@@ -27,23 +27,24 @@ const SponsorsTable = ({ sponsors }: any) => {
 			<div className="block w-full overflow-x-auto">
 				<table className="items-center bg-transparent w-full border-collapse ">
 					<thead>
-						<tr>
-							<th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+						<tr className="border px-8 py-4 border-l-0 border-r-0">
+
+							<th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs  border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
 
 							</th>
-							<th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+							<th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs  border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
 								Organization
 							</th>
-							<th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+							<th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs  border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
 								Events
 							</th>
-							<th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+							<th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs  border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
 								Members
 							</th>
-							<th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+							<th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs  border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
 								Status
 							</th>
-							<th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+							<th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs  border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
 								Prospect
 							</th>
 
@@ -53,7 +54,7 @@ const SponsorsTable = ({ sponsors }: any) => {
 					<tbody>
 						{firstThreeSponsors && firstThreeSponsors?.map((s: any, i: number) => (
 
-							<tr key={i}>
+							<tr key={i} className="border px-8 py-4 border-l-0 border-r-0">
 								<th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
 									<Image className="rounded-full" height="20" width="20" src={s.image} alt='table-img' />
 								</th>

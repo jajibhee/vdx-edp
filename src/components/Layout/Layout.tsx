@@ -11,7 +11,7 @@ const Layout = ({ children }: Props) => {
 		<div className='flex flex-col text-black justify-between'>
 			<NavBar />
 			{children}
-			<div className='mt-4'>
+			<div>
 				<Footer />
 			</div>
 		</div>

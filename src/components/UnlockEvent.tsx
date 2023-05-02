@@ -7,7 +7,7 @@ const UnlockEvent = () => {
 			<h2 className='my-4'>
 				Upgrade to see which of your prospects are likely to attend Web Summit 2023.
 			</h2>
-			<button className="rounded-full bg-green-500 my-4 py-2 px-4"> Upgrade to Unlock</button>
+			<button className="btn-green"> Upgrade to Unlock</button>
 		</div>
 
 	)

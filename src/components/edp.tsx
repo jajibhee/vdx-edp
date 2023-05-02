@@ -39,7 +39,7 @@ const Edp = ({
 		return <span className="pl-1"> | {link} </span>;
 	};
 	return (
-		<div className="flex flex-col md:flex-row text-black justify-between">
+		<div className="flex flex-col md:flex-row text-black justify-between mx-4 md:mx-24">
 			<div className="mt-12">
 				<div className="flex justify-between items-center">
 					<h1 className="text-xl font-semibold">{title}</h1>

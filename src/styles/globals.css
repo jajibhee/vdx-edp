@@ -45,6 +45,10 @@ a {
   @apply h-10 px-6 font-semibold rounded-full text-white;
 }
 
+.btn-green {
+  @apply rounded-full bg-green-500 my-4 py-2 px-4 text-white font-bold;
+}
+
 .pill {
   border: 1px solid rgba(0, 0, 0, 0.12);
   color: rgba(0, 0, 0, 0.26);

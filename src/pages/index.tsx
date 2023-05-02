@@ -30,7 +30,7 @@ export default function Home({
         imgUrl={imgUrl}
       />
       <Layout>
-        <div className="flex flex-col mx-4 text-black md:mx-24 justify-between">
+        <div className="flex flex-col justify-between">
           <Edp
             title={eventSummary?.name}
             date={getFormattedDate(

@@ -127,10 +127,13 @@ const EventAttendeeSummary = memo(({ data }: any) => {
 
 
 	return (
-		<Grid container spacing={5} sx={{ marginTop: 12, display: "flex", flexDirection: { xs: "column", sm: "row" }, flexWrap: "nowrap", overflowY: "auto" }}>
-			<EventCard />
-			<InfoCards cards={eventAttendeeSummary} />
-		</Grid>
+		<div className="mx-4 text-black md:mx-24 mb-8 md:mb-16">
+
+			<Grid container spacing={5} sx={{ marginTop: 12, display: "flex", flexDirection: { xs: "column", sm: "row" }, flexWrap: "nowrap", overflowY: "auto" }}>
+				<EventCard />
+				<InfoCards cards={eventAttendeeSummary} />
+			</Grid>
+		</div>
 	);
 });
 
