@@ -10,23 +10,24 @@ interface ISSRProps {
   attendees: any;
   attendeeSummary: any;
   eventSummary: any;
-  seo: ISeo;
+  seo?: ISeo;
 }
 export default function Home({
   sponsors,
   attendees,
   attendeeSummary,
   eventSummary,
-  seo,
-}: ISSRProps) {
-  const { description, title, pathname, imgUrl } = seo;
 
+}: ISSRProps) {
+  // const { description, title, pathname, imgUrl } = seo;
+
+  // fix seo pathname url
   return (
     <div>
       <Seo
         description={eventSummary.vdx_description}
         title={eventSummary.name}
-        pathname={pathname}
+        pathname={eventSummary.historic_link}
         imgUrl={eventSummary.image}
       />
       <Layout>
@@ -66,8 +67,11 @@ export default function Home({
 export async function getServerSideProps({ req, res }: any) {
   // TODO: infer props
   // infer props with xport const getServerSideProps: GetServerSideProps<{ data: Data }> = async (context) => {
-
+  const headers = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36'
+  };
   // Fetch data from external API
+  res.setHeader('User-Agent', headers['User-Agent']);
   res.setHeader(
     "Cache-Control",
     "public, s-maxage=10, stale-while-revalidate=59"
@@ -75,27 +79,27 @@ export async function getServerSideProps({ req, res }: any) {
   const [sponsors, attendees, attendeeSummary, eventSummary] =
     await Promise.all([
       fetch(
-        `https://david.vendelux.com/ajax/event_sponsors/53af1bf6-91a2-409f-9d89-db30b1540325/`
+        `https://vendelux.com/ajax/event_sponsors/53af1bf6-91a2-409f-9d89-db30b1540325/`
       ).then((res) => res.json()),
       fetch(
-        "https://david.vendelux.com/ajax/event_attendees/53af1bf6-91a2-409f-9d89-db30b1540325/"
+        "https://vendelux.com/ajax/event_attendees/53af1bf6-91a2-409f-9d89-db30b1540325/"
       ).then((res) => res.json()),
       fetch(
-        "https://david.vendelux.com/ajax/event_attendee_summaries/53af1bf6-91a2-409f-9d89-db30b1540325/"
+        "https://vendelux.com/ajax/event_attendee_summaries/53af1bf6-91a2-409f-9d89-db30b1540325/"
       ).then((res) => res.json()),
       fetch(
-        `https://david.vendelux.com/ajax/event_summary/53af1bf6-91a2-409f-9d89-db30b1540325/`
+        `https://vendelux.com/ajax/event_summary/53af1bf6-91a2-409f-9d89-db30b1540325/`
       ).then((res) => res.json()),
     ]);
 
-  const seo = {
-    title: "Web Summit",
-    description:
-      "Web Summit is a technology conference that takes place annually in Lisbon, Portugal.",
-    imgUrl: "https://vendelux.com/wp-content/uploads/2022/02/logo-4.svg",
-    pathname: "app/event/web-summit-2023/53af1bf6-91a2-409f-9d89-db30b1540325",
-  };
+  // const seo = {
+  //   title: "Web Summit",
+  //   description:
+  //     "Web Summit is a technology conference that takes place annually in Lisbon, Portugal.",
+  //   imgUrl: "https://vendelux.com/wp-content/uploads/2022/02/logo-4.svg",
+  //   pathname: "app/event/web-summit-2023/53af1bf6-91a2-409f-9d89-db30b1540325",
+  // };
 
   // Pass data to the page via props
-  return { props: { sponsors, attendees, attendeeSummary, eventSummary, seo } };
+  return { props: { sponsors, attendees, attendeeSummary, eventSummary } };
 }
