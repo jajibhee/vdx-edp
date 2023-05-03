@@ -3,6 +3,7 @@ import { routes } from '../routes';
 
 
 const Footer = () => {
+	const currentYear = new Date().getFullYear();
 	return (
 		<div id="" className="bg-vdxLightGrey py-8 px-4 md:px-0">
 			<div className="container mx-auto">
@@ -37,7 +38,7 @@ const Footer = () => {
 				</div>
 				<div className=" mt-8">
 					<p className="0 text-sm md:text-base">
-						Copyright©  <a href={routes.terms} className="0  transition-colors duration-200">Terms of Service</a> | <a href={routes.privacy} className="0  transition-colors duration-200">Privacy Policy</a>
+						Copyright© {currentYear} <a href={routes.terms} className="0  transition-colors duration-200">Terms of Service</a> | <a href={routes.privacy} className="0  transition-colors duration-200">Privacy Policy</a>
 					</p>
 				</div>
 			</div>

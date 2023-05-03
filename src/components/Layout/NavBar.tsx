@@ -9,9 +9,9 @@ import { routes } from '../routes'
 
 const navigation = [
 	{ name: 'Home', href: '/', current: false },
-	{ name: 'Explore', href: routes.explore, current: true },
-	{ name: 'Prospects', href: routes.prospects, current: false },
-	{ name: 'Planner', href: routes.planner, current: false },
+	{ name: 'Explore', href: routes.signin, current: true },
+	{ name: 'Prospects', href: routes.signin, current: false },
+	{ name: 'Planner', href: routes.signin, current: false },
 ]
 
 function classNames(...classes: string[]) {

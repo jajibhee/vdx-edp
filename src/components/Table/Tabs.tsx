@@ -55,7 +55,7 @@ export default function BasicTabs({ attendeesCount, sponsorsCount, sponsors, att
 	return (
 		<Box sx={{ width: '100%' }}>
 			<Box sx={{ borderBottom: 1, borderColor: 'divider', background: 'rgb(215, 225, 254)' }}>
-				<Tabs value={value} onChange={handleChange} sx={{ fontFamily: 'Barlow', fontWeight: 'normal' }} aria-label="basic tabs example">
+				<Tabs value={value} onChange={handleChange} sx={{ fontFamily: 'Barlow', fontWeight: 'bold' }} aria-label="basic tabs example">
 					<Tab label={`Attendees (${formatNumber(attendeesCount)})`} {...a11yProps(0)} />
 					<Tab label={`Exhibitors and sponsors (${formatNumber(sponsorsCount)})`} {...a11yProps(1)} />
 				</Tabs>
