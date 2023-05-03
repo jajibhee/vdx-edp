@@ -4,8 +4,6 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardHeader from "@mui/material/CardHeader";
 import Grid from "@mui/material/Grid";
-
-import Skeleton from "@mui/material/Skeleton";
 import Image from "next/image";
 import WindowSearch from "public/icons/cards/WindowSearch.svg";
 import { formatNumber } from "../utils/utils";

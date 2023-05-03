@@ -8,6 +8,8 @@ import Box from '@mui/material/Box';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import TrackChanges from '@mui/icons-material/TrackChanges';
 import SpeakerNotesIcon from '@mui/icons-material/SpeakerNotes';
+import Link from "next/link";
+import { routes } from "../routes";
 
 type ProspectStatusProps = {
 	prospect: boolean;
@@ -125,13 +127,19 @@ const AttendeesTable = ({ attendees }: any) => {
 										/>
 									</th>
 									<th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
-										{e.name}
+
+										<Link href={`${routes.profile}${e.profile_slug}/${e.profile_uuid}`}>
+											{e.name}
+										</Link>
 									</th>
 									<th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
 										{e.title}
 									</th>
 									<td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
-										{e.organization}
+										<Link href={`${routes.orgProfile}${e.org_slug}/${e.org_uuid}`}>
+											{e.organization}
+										</Link>
+
 									</td>
 									<td className="border-t-0 px-6 align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
 										<Status status={e.status.toLowerCase()} />

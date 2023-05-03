@@ -24,15 +24,16 @@ export default function Home({
   return (
     <div>
       <Seo
-        description={description}
-        title={title}
+        description={eventSummary.vdx_description}
+        title={eventSummary.name}
         pathname={pathname}
-        imgUrl={imgUrl}
+        imgUrl={eventSummary.image}
       />
       <Layout>
         <div className="flex flex-col justify-between">
           <Edp
             title={eventSummary?.name}
+            image={eventSummary?.image}
             date={getFormattedDate(
               eventSummary?.date_start,
               eventSummary?.date_end

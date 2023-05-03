@@ -36,21 +36,21 @@ a {
 }
 
 .btn {
-  @apply text-white text-sm py-2 px-4 rounded bg-secondary;
+  @apply cursor-pointer text-white text-sm py-2 px-4 rounded bg-secondary;
 }
 .btn-blue {
-  @apply bg-blue-500 text-white;
+  @apply cursor-pointer bg-blue-500 text-white;
 }
 .btn-blue:hover {
-  @apply bg-blue-700;
+  @apply cursor-pointer bg-blue-700;
 }
 
 .btn-pill {
-  @apply h-10 px-6 font-semibold rounded-full text-white;
+  @apply cursor-pointer h-10 px-6 font-semibold rounded-full text-white;
 }
 
 .btn-green {
-  @apply rounded-full bg-green-500 my-4 py-2 px-4 text-white font-bold;
+  @apply rounded-full cursor-pointer w-48 bg-green-500 my-4 py-2 px-4 text-white font-bold;
 }
 
 .input-width {

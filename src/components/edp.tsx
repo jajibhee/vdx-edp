@@ -3,6 +3,7 @@ import Image from "next/image";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { getFormattedCost, truncateString } from "./utils/utils";
 import Link from "next/link";
+import { routes } from "./routes";
 
 type IEventDetails = {
 	title: any;
@@ -14,6 +15,7 @@ type IEventDetails = {
 	location: any;
 	costLow: any;
 	costHigh: any;
+	image: string;
 };
 
 const Edp = ({
@@ -26,6 +28,7 @@ const Edp = ({
 	country,
 	costLow,
 	costHigh,
+	image
 }: IEventDetails) => {
 	const [more, setMore] = useState(false);
 	const locationDetails: string = venue + (location ? " | " + location : "");
@@ -43,7 +46,7 @@ const Edp = ({
 			<div className="mt-12">
 				<div className="flex justify-between items-center">
 					<h1 className="text-xl font-semibold">{title}</h1>
-					<div className="flex justify-between items-center text-main cursor-pointer main">
+					<div onClick={() => window.open(routes.signin)} className="flex justify-between items-center text-main cursor-pointer main">
 						<FavoriteBorderIcon />
 						<h1 className="ml-2">Save to Planner</h1>
 					</div>
@@ -108,7 +111,7 @@ const Edp = ({
 					</div>
 					<div className="flex justify-center items-center">
 						<Image
-							src="https://i.vendelux.com/--PpTyxSDdBfCpLW7Qojd5hfijc=/fit-in/412x246/filters:upscale():fill(f0eff9,1)/media/pic_folder/5iw2NPQNZMjKkFYPVhzCHXYChceDryvhGPQpZZwZ5riX_SUG4dPy.png"
+							src={image}
 							width={200}
 							height={120}
 							object-fit="cover"

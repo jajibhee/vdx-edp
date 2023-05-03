@@ -1,4 +1,7 @@
-import React from 'react'
+
+import Image from 'next/image';
+import LockOpenIcon from '@mui/icons-material/LockOpen';
+import { routes } from './routes';
 
 const UnlockEvent = () => {
 	return (
@@ -7,7 +10,10 @@ const UnlockEvent = () => {
 			<h2 className='my-4'>
 				Upgrade to see which of your prospects are likely to attend Web Summit 2023.
 			</h2>
-			<button className="btn-green"> Upgrade to Unlock</button>
+			<div onClick={() => window.open(routes.signin)} className='btn-green flex items-center '>
+				<LockOpenIcon />
+				<div> Upgrade to Unlock</div>
+			</div>
 		</div>
 
 	)

@@ -1,3 +1,5 @@
+import { routes } from "../routes";
+
 interface ButtonProps {
   text: string;
   style?: string;
@@ -5,6 +7,6 @@ interface ButtonProps {
 
 export const Button = ({ text, style }: ButtonProps) => {
   return (
-    <div className={`btn ${style}`}>{text}</div>
+    <div onClick={() => window.open(routes.signin)} className={`btn ${style}`}>{text}</div>
   )
 }

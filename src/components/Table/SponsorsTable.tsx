@@ -7,6 +7,8 @@ import TrackChanges from '@mui/icons-material/TrackChanges';
 import IconButton from '@mui/material/IconButton';
 import StarIcon from '@mui/icons-material/Star';
 import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
+import Link from "next/link";
+import { routes } from "../routes";
 
 
 type StatusProps = {
@@ -118,7 +120,10 @@ const SponsorsTable = ({ sponsors }: any) => {
 										/>
 									</th>
 									<th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
-										{s.organization}
+										<Link href={`${routes.orgProfile}${s.slug}/${s.uuid}`}>
+											{s.organization}
+											{console.log(s, 's')}
+										</Link>
 									</th>
 									<th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
 										{s.events}

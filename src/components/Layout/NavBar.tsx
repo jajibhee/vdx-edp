@@ -4,12 +4,14 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import { Button } from '@/components/Buttons/Button'
 import Autocomplete from '../Algolia/Autocomplete'
+import { routes } from '../routes'
+
 
 const navigation = [
-	{ name: 'Home', href: '#', current: false },
-	{ name: 'Explore', href: '#', current: true },
-	{ name: 'Prospects', href: '#', current: false },
-	{ name: 'Planner', href: '#', current: false },
+	{ name: 'Home', href: '/', current: false },
+	{ name: 'Explore', href: routes.explore, current: true },
+	{ name: 'Prospects', href: routes.prospects, current: false },
+	{ name: 'Planner', href: routes.planner, current: false },
 ]
 
 function classNames(...classes: string[]) {
